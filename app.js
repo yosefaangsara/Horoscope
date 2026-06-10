@@ -4,7 +4,7 @@ const todayDateEl = document.getElementById("today-date");
 const newQuoteBtn = document.getElementById("new-quote-btn");
 const copyBtn = document.getElementById("copy-btn");
 const copyFeedbackEl = document.getElementById("copy-feedback");
-
+//ini bagian button (https://www.w3schools.com/js/tryit.asp?filename=tryjs_whereto_head)
 let quotes = [];
 let currentQuote = null;
 
@@ -16,7 +16,7 @@ function formatToday() {
     day: "numeric",
   });
 }
-
+// ini bagian format tahun,bulan,hari
 function hashDate(date) {
   const str = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
   let hash = 0;
@@ -31,7 +31,7 @@ function pickDailyQuote(list) {
   const index = hashDate(new Date()) % list.length;
   return list[index];
 }
-
+//tanggal yang baru
 function pickRandomQuote(list, exclude) {
   if (list.length <= 1) return list[0];
 
