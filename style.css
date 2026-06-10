@@ -1,0 +1,162 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0f1419;
+  --surface: #1a2332;
+  --text: #e8edf4;
+  --muted: #8b9cb3;
+  --accent: #6c9eff;
+  --accent-hover: #8ab4ff;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(108, 158, 255, 0.15), transparent),
+    var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.app {
+  width: 100%;
+  max-width: 640px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(1.75rem, 5vw, 2.25rem);
+  font-weight: 400;
+}
+
+.date {
+  margin: 0.75rem 0 0;
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.quote-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow);
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quote-text {
+  margin: 0;
+  font-size: clamp(1.25rem, 4vw, 1.6rem);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.quote-text::before {
+  content: "\201C";
+  color: var(--accent);
+  font-size: 2rem;
+  line-height: 0;
+  vertical-align: -0.4em;
+  margin-right: 0.15em;
+}
+
+.quote-author {
+  display: block;
+  margin-top: 1.5rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-style: normal;
+  color: var(--muted);
+}
+
+.quote-author:empty {
+  display: none;
+}
+
+.quote-author:not(:empty)::before {
+  content: "— ";
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+.btn {
+  font-family: system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.copy-feedback {
+  text-align: center;
+  margin-top: 1rem;
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.copy-feedback[hidden] {
+  display: none;
+}

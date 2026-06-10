@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A daily dose of inspiration — one quote for each day." />
+    <title>Quote of the Day</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <p class="eyebrow">Daily inspiration</p>
+        <h1>Quote of the Day</h1>
+        <p class="date" id="today-date"></p>
+      </header>
+
+      <section class="quote-card" aria-live="polite">
+        <blockquote id="quote-text" class="quote-text">
+          Loading…
+        </blockquote>
+        <cite id="quote-author" class="quote-author"></cite>
+      </section>
+
+      <div class="actions">
+        <button type="button" id="new-quote-btn" class="btn btn-secondary">
+          Another quote
+        </button>
+        <button type="button" id="copy-btn" class="btn btn-primary">
+          Copy quote
+        </button>
+      </div>
+
+      <p id="copy-feedback" class="copy-feedback" hidden>Copied to clipboard!</p>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
